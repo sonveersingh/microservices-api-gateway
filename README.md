@@ -16,7 +16,7 @@ Git
 🚀 Quick Start
 1. Clone & Open Solution
 
-git clone https://github.com/xyz/microservices-api-gateway.git
+git clone https://github.com/sonveersingh/microservices-api-gateway.git
 cd microservices-api-gateway
 
 Open MicroservicesSolution.sln in Visual Studio 2022
@@ -67,7 +67,7 @@ curl -X POST http://localhost:8000/customers \
   -d '{"name":"Test User","email":"test@example.com","phone":"9999999999","address":"Test City"}'
 
 🛡️ Rate Limiting
-60 requests/min per service (/products, /customers)
+60 requests/5 min per service (/products, /customers)
 
 HTTP 429 on exceed
 

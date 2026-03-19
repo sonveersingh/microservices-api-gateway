@@ -5,9 +5,9 @@
     "RateLimitOptions": {
       "RouteKeys": [ "R1" ], // if undefined or empty array, opts will apply to all routes
       "ClientIdHeader": "Oc-Client", // std (default) header name
-      "Limit": 3,
-      "Period": "30s", // ms, s, m, h, d
-      "Wait": "1m", // ms, s, m, h, d
+      "Limit": 60,
+      "Period": "60s", // ms, s, m, h, d
+      "Wait": "5m", // ms, s, m, h, d
       "StatusCode": 429, // Too Many Requests -> standard status
       "QuotaMessage": "Ocelot API calls quota exceeded! Maximum admitted {0} per {1}.", // standard template with 2 parameters
       "KeyPrefix": "ocelot-rate-limiting" // for caching key
@@ -27,9 +27,9 @@
       ],
       "RateLimitOptions": {
         "EnableRateLimiting": true,
-        "Period": "10s",
-        "Limit": 10,
-        "PeriodTimespan": 30
+        "Period": "5m",
+        "Limit": 60,
+        "PeriodTimespan": 60
       },
       "FileCacheOptions": {
         "TtlSeconds": 20
@@ -49,9 +49,9 @@
       ],
       "RateLimitOptions": {
         "EnableRateLimiting": true,
-        "Period": "10s",
-        "Limit": 2,
-        "PeriodTimespan": 30
+        "Period": "5m",
+        "Limit": 60,
+        "PeriodTimespan": 60
       }
 
     },
@@ -68,9 +68,12 @@
       ],
       "RateLimitOptions": {
         "EnableRateLimiting": true,
-        "Period": "10s",
-        "Limit": 2,
-        "PeriodTimespan": 30
+        "Period": "5m",
+        "Limit": 60,
+        "PeriodTimespan": 60
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 20
       }
 
     },
@@ -87,9 +90,12 @@
       ],
       "RateLimitOptions": {
         "EnableRateLimiting": true,
-        "Period": "10s",
-        "Limit": 2,
-        "PeriodTimespan": 30
+        "Period": "5m",
+        "Limit": 60,
+        "PeriodTimespan": 60
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 20
       }
     },
     {
@@ -105,9 +111,9 @@
       ],
       "RateLimitOptions": {
         "EnableRateLimiting": true,
-        "Period": "10s",
-        "Limit": 2,
-        "PeriodTimespan": 30
+        "Period": "5m",
+        "Limit": 60,
+        "PeriodTimespan": 60
       }
 
     },
@@ -124,9 +130,12 @@
       ],
       "RateLimitOptions": {
         "EnableRateLimiting": true,
-        "Period": "10s",
-        "Limit": 2,
-        "PeriodTimespan": 30
+        "Period": "5m",
+        "Limit": 60,
+        "PeriodTimespan": 60
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 20
       }
 
     }
