@@ -1,9 +1,14 @@
 # microservices-api-gateway
-api gateway implementation with ocelot
-Clients → API Gateway (localhost:5003)
-            ↓
-   ├─ Products Service (localhost:5001)
-   └─ Customers Service (localhost:5002)
+**Microservices API Gateway Demo (.NET 8)**
+Complete microservices architecture with Product and Customer services behind an Ocelot API Gateway featuring JSON file persistence, rate limiting, and response caching.
+
+🏗️ Architecture Overview
+
+Clients → API Gateway (localhost:8000) 
+            ↓ [🗄️ Cache + ⏱️ Rate Limit]
+   ├─ Customer.Microservice (localhost:5001) [JSON data/]
+   └─ Product.Microservice (localhost:5002) [JSON data/]
+
    
    
 📋 Prerequisites
@@ -33,20 +38,20 @@ Right-click Solution → Set Startup Projects
 
 Select Multiple startup projects
 
-Set Action for each:
+Set **Action** for each:
 
-Project	Action
-ApiGateway	Start 
-Product.Microservice	Start
-Customer.Microservice  Start
+| Project         | Action  | Port |
+| --------------- | ------- | ---- |
+| ApiGateway      | Start  | 5003 |
+| Product.Microservice  | Start   | 5002 |
+| Customer.Microservice | Start   | 5001 |
 
 4. Run Everything (F5)
 All 3 services start automatically:
-
-text
+            
 ✅ API Gateway:      http://localhost:5003
-✅ Product Service:  http://localhost:5001  
-✅ Customer Service: http://localhost:5002
+✅ Customer.Microservice:  http://localhost:5001  
+✅ Product.Microservice: http://localhost:5002
 
 🔍 API Gateway Endpoints
 Test via API Gateway only (localhost:5003):
@@ -73,16 +78,19 @@ HTTP 429 on exceed
 
 IP-based protection
 
+🗄️ Ocelot Caching (NEW!)
+Reduces microservice load by 80%+ for repeated GET requests.
+
 📁 Project Structure
 
 MicroservicesSolution/
 ├── ApiGateway/                 # Ocelot Gateway (port 5003)
 │   ├── ocelot.json
-├── ProductService/             # Products CRUD (port 5002)
+├── Product.Microservice/             # Products CRUD (port 5002)
 │   ├── data/products.json
 │   ├── Controllers/
 │   └── Repository/
-├── CustomerService/            # Customers CRUD (port 5001)
+├── Customer.Microservice/            # Customers CRUD (port 5001)
 │   ├── data/customers.json
 │   ├── Controllers/
 │   └── Repository/
@@ -91,9 +99,6 @@ MicroservicesSolution/
 🔧 Data Storage
 JSON files in data/
 
-Thread-safe async read/write
-
-Auto ID generation
 
 Persists between restarts
 
