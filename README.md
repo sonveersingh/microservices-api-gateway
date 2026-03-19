@@ -1,6 +1,7 @@
 # microservices-api-gateway
 **Microservices API Gateway Demo (.NET 8)**
 Complete microservices architecture with Product and Customer services behind an Ocelot API Gateway featuring JSON file persistence, rate limiting, and response caching.
+
 🏗️ Architecture Overview
 
 Clients → API Gateway (localhost:8000) 
@@ -47,7 +48,7 @@ Set **Action** for each:
 
 4. Run Everything (F5)
 All 3 services start automatically:
-
+            
 ✅ API Gateway:      http://localhost:5003
 ✅ Customer.Microservice:  http://localhost:5001  
 ✅ Product.Microservice: http://localhost:5002
