@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 17 Pro",
+    "price": 999.99,
+    "description": "Latest flagship smartphone with A20 Bionic chip, triple camera system"
+  },
+  {
+    "id": 2,
+    "name": "MacBook Pro 16 M4",
+    "price": 2499.00,
+    "description": "16-inch laptop with M4 Pro chip, 36GB RAM, 1TB SSD"
+  },
+  {
+    "id": 3,
+    "name": "Samsung Galaxy S26 Ultra",
+    "price": 1299.99,
+    "description": "Android flagship with S Pen, 200MP camera, 12GB RAM"
+  },
+  {
+    "id": 4,
+    "name": "Dell XPS 15",
+    "price": 1899.00,
+    "description": "Premium ultrabook with 4K OLED display, Intel Core i9"
+  },
+  {
+    "id": 5,
+    "name": "Sony WH-1000XM6",
+    "price": 399.99,
+    "description": "Wireless noise-cancelling headphones with 30hr battery"
+  },
+  {
+    "id": 6,
+    "name": "Apple Watch Ultra 3",
+    "price": 799.00,
+    "description": "Rugged smartwatch with dual-frequency GPS, dive computer"
+  },
+  {
+    "id": 7,
+    "name": "Nikon Z8 Mirrorless",
+    "price": 3999.99,
+    "description": "Full-frame camera with 45MP sensor, 8K video recording"
+  },
+  {
+    "id": 8,
+    "name": "Samsung 55\" QLED 4K",
+    "price": 1199.99,
+    "description": "Quantum Dot TV with 120Hz refresh rate, HDR10+"
+  },
+  {
+    "id": 9,
+    "name": "Logitech MX Master 4",
+    "price": 99.99,
+    "description": "Wireless mouse with MagSpeed scrolling, 8K DPI sensor"
+  },
+  {
+    "id": 10,
+    "name": "Apple AirPods Pro 3",
+    "price": 249.00,
+    "description": "True wireless earbuds with adaptive ANC, spatial audio"
+  },
+  {
+    "id": 11,
+    "name": "Microsoft Surface Laptop 7",
+    "price": 1299.99,
+    "description": "13.8-inch touchscreen with Snapdragon X Elite"
+  },
+  {
+    "id": 12,
+    "name": "Google Pixel 9 Pro",
+    "price": 999.99,
+    "description": "AI-powered smartphone with Tensor G5, 50MP camera"
+  },
+  {
+    "id": 13,
+    "name": "Razer Blade 16",
+    "price": 3299.99,
+    "description": "Gaming laptop RTX 5090 GPU, 240Hz QHD+ display"
+  },
+  {
+    "id": 14,
+    "name": "Dyson V15 Detect",
+    "price": 749.99,
+    "description": "Cordless vacuum with laser dust detection, 60min runtime"
+  },
+  {
+    "id": 15,
+    "name": "Bose QuietComfort Ultra",
+    "price": 429.00,
+    "description": "Premium headphones with Immersive Audio, CustomTune tech"
+  }
+]

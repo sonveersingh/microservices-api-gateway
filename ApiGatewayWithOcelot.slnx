@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ApiGateway/ApiGateway.csproj" Id="918a4092-d0b4-4b92-96f8-fce5ce1e1cde" />
+  <Project Path="Microservices/Customer.Microservice/Customer.Microservice.csproj" Id="204be47d-3e6d-45ae-aef9-2a724baa14d0" />
+  <Project Path="Microservices/Product.Microservice/Product.Microservice.csproj" Id="700dac4f-4b47-4922-a0d5-03284ac6cc58" />
+</Solution>

@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Microservices\\Customer.Microservice\\Customer.Microservice.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Microservices\\Product.Microservice\\Product.Microservice.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ApiGateway\\ApiGateway.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
