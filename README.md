@@ -85,7 +85,7 @@ Reduces microservice load by 80%+ for repeated GET requests. <br/>
 
 MicroservicesSolution/ <br/>
 ├── ApiGateway/                 # Ocelot Gateway (port 5003) <br/>
-│   ├── ocelot.json
+│   ├── ocelot.json <br/>
 ├── Product.Microservice/             # Products CRUD (port 5002) <br/>
 │   ├── data/products.json <br/>
 │   ├── Controllers/ <br/>
