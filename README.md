@@ -4,57 +4,57 @@ Complete microservices architecture with Product and Customer services behind an
 
 🏗️ Architecture Overview
 
-Clients → API Gateway (localhost:8000) 
-            ↓ [🗄️ Cache + ⏱️ Rate Limit]
-   ├─ Customer.Microservice (localhost:5001) [JSON data/]
-   └─ Product.Microservice (localhost:5002) [JSON data/]
+Clients → API Gateway             (localhost:5001) <br/>
+            ↓ [🗄️ Cache + ⏱️ Rate Limit] <br/>
+   ├─ Customer.Microservice             (localhost:5001) [JSON data/] <br/>
+   └─ Product.Microservice             (localhost:5002) [JSON data/] <br/>
 
    
    
-📋 Prerequisites
-.NET 8 SDK (or later)
+📋 Prerequisites <br/>
+.NET 8 SDK (or later) <br/>
 
-Visual Studio 2022 (17.8+ recommended)
+Visual Studio 2022 (17.8+ recommended) <br/>
 
-Git
+Git <br/>
 
-🚀 Quick Start
-1. Clone & Open Solution
+🚀 Quick Start <br/>
+1. Clone & Open Solution <br/>
 
-git clone https://github.com/sonveersingh/microservices-api-gateway.git
-cd microservices-api-gateway
+git clone https://github.com/sonveersingh/microservices-api-gateway.git <br/>
+cd microservices-api-gateway <br/>
 
-Open MicroservicesSolution.sln in Visual Studio 2022
+Open MicroservicesSolution.sln in Visual Studio 2022 <br/>
 
-2. Verify Data Files
-Ensure these files exist with sample data:
+2. Verify Data Files<br/>
+Ensure these files exist with sample data: <br/>
 
-Product.Microservice/Data/Products.json     (15 products)
-Customer.Microservice/Data/Customers.json   (20 customers)
+Product.Microservice/Data/Products.json     (15 products) <br/>
+Customer.Microservice/Data/Customers.json   (20 customers) <br/>
 
 
-3. Configure Multi-Startup Projects
-Right-click Solution → Set Startup Projects
+3. Configure Multi-Startup Projects  <br/>
+Right-click Solution → Set Startup Projects <br/>
 
-Select Multiple startup projects
+Select Multiple startup projects <br/>
 
-Set **Action** for each:
+Set **Action** for each: <br/>
 
-| Project         | Action  | Port |
+| Project         | Action  | Port | 
 | --------------- | ------- | ---- |
 | ApiGateway      | Start  | 5003 |
 | Product.Microservice  | Start   | 5002 |
 | Customer.Microservice | Start   | 5001 |
 
-4. Run Everything (F5)
-All 3 services start automatically:
+4. Run Everything (F5) <br/>
+All 3 services start automatically: <br/>
             
-✅ API Gateway:      http://localhost:5003
-✅ Customer.Microservice:  http://localhost:5001  
-✅ Product.Microservice: http://localhost:5002
+✅ API Gateway:             http://localhost:5003 <br/>
+✅ Customer.Microservice:             http://localhost:5001  <br/>
+✅ Product.Microservice:            http://localhost:5002 <br/>
 
-🔍 API Gateway Endpoints
-Test via API Gateway only (localhost:5003):
+🔍 API Gateway Endpoints <br/>
+Test via API Gateway only (localhost:5003): <br/>
 
 | Method | Endpoint     | Description        | Response              |
 | ------ | ------------ | ------------------ | --------------------- |
@@ -65,56 +65,56 @@ Test via API Gateway only (localhost:5003):
 | GET    | gateway/customers/1 | Get customer by ID | Amit Sharma details   |
 | POST   | gateway/customers   | Create customer    | 201 Created           |
 
-Sample POST Request
-bash
-curl -X POST http://localhost:8000/customers \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Test User","email":"test@example.com","phone":"9999999999","address":"Test City"}'
+Sample POST Request <br/>
+bash <br/>
+curl -X POST http://localhost:8000/customers \ 
+  -H "Content-Type: application/json" \ 
+  -d '{"name":"Test User","email":"test@example.com","phone":"9999999999","address":"Test City"}' <br/>
 
-🛡️ Rate Limiting
-60 requests/5 min per service (/products, /customers)
+🛡️ Rate Limiting <br/>
+60 requests/5 min per service (/products, /customers) <br/>
 
-HTTP 429 on exceed
+HTTP 429 on exceed <br/>
 
-IP-based protection
+IP-based protection <br/>
 
-🗄️ Ocelot Caching (NEW!)
-Reduces microservice load by 80%+ for repeated GET requests.
+🗄️ Ocelot Caching (NEW!) <br/>
+Reduces microservice load by 80%+ for repeated GET requests. <br/>
 
-📁 Project Structure
+📁 Project Structure <br/>
 
-MicroservicesSolution/
-├── ApiGateway/                 # Ocelot Gateway (port 5003)
+MicroservicesSolution/ <br/>
+├── ApiGateway/                 # Ocelot Gateway (port 5003) <br/>
 │   ├── ocelot.json
-├── Product.Microservice/             # Products CRUD (port 5002)
-│   ├── data/products.json
-│   ├── Controllers/
-│   └── Repository/
-├── Customer.Microservice/            # Customers CRUD (port 5001)
-│   ├── data/customers.json
-│   ├── Controllers/
-│   └── Repository/
-└── README.md
+├── Product.Microservice/             # Products CRUD (port 5002) <br/>
+│   ├── data/products.json <br/>
+│   ├── Controllers/ <br/>
+│   └── Repository/ <br/>
+├── Customer.Microservice/            # Customers CRUD (port 5001) <br/>
+│   ├── data/customers.json <br/>
+│   ├── Controllers/ <br/>
+│   └── Repository/ <br/>
+└── README.md <br/>
 
-🔧 Data Storage
+🔧 Data Storage <br/>
 JSON files in data/
 
 
-Persists between restarts
+Persists between restarts <br/>
 
-🧪 Testing
-Swagger UI (Individual Services)
-https://localhost:5001/swagger/index.html
-https://localhost:5002/swagger/index.html
-https://localhost:5003/swagger/index.html
+🧪 Testing <br/>
+Swagger UI (Individual Services) <br>
+ https://localhost:5001/swagger/index.html <br/>
+ https://localhost:5002/swagger/index.html <br/>
+ https://localhost:5003/swagger/index.html <br/>
 
-📚 Tech Stack
-✅ .NET 8 Web API
-✅ Ocelot API Gateway
-✅ Repository Pattern
-✅ JSON File Persistence
-✅ Rate Limiting (IP-based)
-✅ SemaphoreSlim (Thread Safety)
-✅ C# 8+ Features
-✅ Visual Studio 2022 Multi-Startup
+📚 Tech Stack <br/>
+✅ .NET 8 Web API <br/>
+✅ Ocelot API Gateway <br/>
+✅ Repository Pattern <br/>
+✅ JSON File Persistence <br/>
+✅ Rate Limiting (IP-based) <br/>
+✅ SemaphoreSlim (Thread Safety) <br/>
+✅ C# 8+ Features <br/>
+✅ Visual Studio 2022 Multi-Startup <br/>
 
